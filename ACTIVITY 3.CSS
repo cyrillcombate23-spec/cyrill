@@ -1,0 +1,248 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College Website</title>
+</head>
+<body>
+    <p><a href="#bottom">Back to Bottom</a></p>
+    <header>    
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple welcome message.!!!!</p>
+    </header> 
+    <article>
+        <h2>About This Site</h2>
+        <p>This site is a demonstration of a My College Website.</p>
+    </article>
+    <p>Author: CYRILL ANNE M. COMBATE!!!</p>
+    <p>Publication Date: August 3 2024</p>
+    <section>
+        <h2>Starting My Journey</h2>
+        <p>To start my day, I wake up at 6:30 AM if I have a 7:30 AM class—that’s my daily routine. 
+            I also get the child I look after ready, since the little one stays with me every morning. 
+            My mom irons my clothes the night before because she likes them perfectly pressed.
+            I skip breakfast at home and head straight to school, where I eat instead; after that, 
+            I shower, commute, and go to class.</p>
+    <section>
+        <h2> My College Experience</h2>
+        <p>The course is tough, but I can handle it because I want to graduate. 
+            I’m my mom’s only child, and I want to give her a good life. 
+            College life is actually enjoyable, provided you find friends who will stick with you through the hard times and the work;
+            having that kind of support gives you a better chance of graduating since you have someone with you every step of the way.
+ 
+    </section>
+    <section>
+        <h2>My Future Goals !</h2>
+        <p> My goal is to graduate and provide a good life for my mom, since she is the only one I have;
+             I want to repay her for all her hardships. Her only wish is for me to finish my studies and have a small shop of her own, 
+             so I will make that happen, no matter how difficult my studies may be.</p>
+</p>
+    </section>
+    <section>
+        <h2>My Favorite Hobbies haha </h2>
+        <h3>Top 5 Hobbies</h3>
+        <ol>
+            <li>Cooking</li>
+            <li>Caring Baby</li>
+            <li>watching basketball</li>
+            <li>playing vball</li>
+            <li>hiking</li>
+        </ol>
+        <h3> Other Activities</h3>
+        <ul>
+            <li>Listen music</li>
+            <li>Gardening</li>
+            <li>Traveling</li>
+            <li>listen</li>
+            <li>listen</li>
+            <li>listen</li><li>listen</li>
+
+        
+        </ul>
+    </section>
+    <section>
+        <h2> MY FAVORITE BINI</h2>
+        <figure>
+    <img src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg" alt="cyy" width="200">
+    <figcaption>My BABY</figcaption>
+
+">
+       <figure>
+    <img src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg" alt="cyy" width="200">
+    <figcaption>My BABY</figcaption>
+</figure>
+</figure>
+
+</figure>
+
+        <h2> Class Schedule</h2>
+        <table border ="1">
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Subject</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>8:30 AM - 10:00 AM</td>
+                <td>Mathematics</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>10:00 AM - 11:30 AM</td>
+                <td>AP</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>1:00 PM - 2:30 PM</td>
+                <td>ARTS</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>3:00 PM - 4:30 PM</td>
+                <td>SCIENCE</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>9:00 AM - 10:30 AM</td>
+                <td>Physical Education</td>
+                
+            </tr>
+        </table>
+    </section>
+        <h1> Feed Back</h1>
+        <form action="submit_feedback.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="feedback">Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+            <input type="submit" value="Submit">
+            <p><b> Select Your Skill:</b></p>
+            <input type="checkbox" id="html" name="skill" value="html">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="css" name="skill" value="css">   
+            <label for="css">CSS</label><br>
+            <input type="checkbox" id="javascript" name="skill" value="javascript">
+            <label for="javascript">JavaScript</label>
+            <p><b> Preferred Contact Method:</b></p>
+            <input type="radio" id="email_option" name="contact" value="email">
+            <label for="email_option">Email</label><br>
+            <input type="radio" id="phone_option" name="contact" value="phone">
+            <label for="phone_option">Phone</label><br>
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="philippines">Philippines</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+            </select>
+            <label for="profile">Upload Profile Picture:</label>
+            <input type="file" id="profile" name="profile">
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 My College Website. All rights reserved.</p>
+        <p> <a href="#top">Back to Top</a> </p>
+    </footer>
+</body>
+</html>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College Website</title>
+
+    <style>
+    
+
+        
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        
+        a:link {
+            color: rgb(238, 12, 125);
+        }
+
+        a:visited {
+            color: rgb(247, 231, 10);
+        }
+
+        a:hover {
+            color: rgb(235, 17, 144);
+        }
+
+        
+        .important {
+            background-color: rgb(224, 42, 10);
+            font-weight: bold;
+            padding: 5px;
+        }
+
+    
+        #mainHeading {
+            color: rgb(144, 12, 252);
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        
+        .gradient-box {
+            background: linear-gradient(to right, #4206e9, #f10b54);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .color-box {
+            background-color: #f80606b9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        
+        section {
+            padding: 15px;
+            border: 2px solid #0bf01e;
+            margin: 15px;
+            border-radius: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid rgb(145, 9, 230);
+            text-align: center;
+        }
+
+        img {
+            border: 3px solid #0b80ec;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        form {
+            padding: 15px;
+            border: 2px solid #107ce06b;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #f53780;
+        }
+    </style>
+</head>
