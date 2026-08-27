@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My College Website</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Arial, sans-serif;
+        }
+
+        a:link {
+            color: rgb(238, 12, 125);
+        }
+
+        a:visited {
+            color: rgb(247, 231, 10);
+        }
+
+        a:hover {
+            color: rgb(235, 17, 144);
+        }
+
+        .important {
+            background-color: rgb(224, 42, 10);
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        header {
+            background: linear-gradient(to right, #4206e9, #f10b54);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #mainHeading {
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            text-align: center;
+        }
+
+        article {
+            padding: 15px;
+            margin: 15px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        section {
+            padding: 15px;
+            border: 2px solid #0bf01e;
+            margin: 15px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .gradient-box {
+            background: linear-gradient(to right, #4206e9, #f10b54);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .color-box {
+            background-color: #f80606b9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .flex-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #4206e9;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .flex-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .flex-nav a:hover {
+            background-color: #f10b54;
+            color: white;
+            border-radius: 5px;
+        }
+
+        img {
+            border: 3px solid #0b80ec;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 10px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figcaption {
+            font-weight: bold;
+            color: #4206e9;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid rgb(145, 9, 230);
+            text-align: center;
+        }
+
+        th {
+            background-color: #4206e9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2eaff;
+        }
+
+        tr:hover {
+            background-color: #ffd6e5;
+        }
+
+        form {
+            padding: 20px;
+            border: 2px solid #107ce06b;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #f53780;
+        }
+
+        input,
+        textarea,
+        select {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #777;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        input[type="submit"] {
+            background-color: #4206e9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            max-width: 150px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f10b54;
+        }
+
+        .activity-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #4206e9;
+            padding: 15px;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .activity-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .activity-nav a:hover {
+            background-color: #f10b54;
+            border-radius: 5px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-height: 300px;
+            background-color: #e9e9ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card {
+            width: 250px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #4206e9;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            color: #4206e9;
+        }
+
+        .card p {
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0;
+            border: 3px solid #0b80ec;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background: linear-gradient(to right, #4206e9, #f10b54);
+            border-radius: 10px;
+        }
+
+        .center-element {
+            background-color: white;
+            color: #4206e9;
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .blog-main {
+            background-color: #e8f0ff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4206e9;
+        }
+
+        .blog-sidebar {
+            background-color: #ffe8f0;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #f10b54;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 2px solid #0b80ec;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .product h3 {
+            color: #4206e9;
+        }
+
+        .product p {
+            text-align: center;
+        }
+
+        .product button {
+            background-color: #f10b54;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: #4206e9;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            padding: 20px;
+            background-color: #eeeeff;
+            border-radius: 10px;
+        }
+
+        .day-name {
+            background-color: #4206e9;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .day {
+            background-color: white;
+            border: 1px solid #999;
+            min-height: 70px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .day:hover {
+            background-color: #ffd6e5;
+        }
+
+        .span-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            padding: 20px;
+            background-color: #eeeeee;
+        }
+
+        .span-item {
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+            background: linear-gradient(to right, #4206e9, #f10b54);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .small-item {
+            background-color: #0bf01e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* ================================================ */
+        /* ACTIVITY 5: RESPONSIVE DESIGN */
+        /* ================================================ */
+
+        /* MOBILE-FIRST APPROACH: Default is single column */
+        /* Activity 5 #1 - Media query for mobile devices */
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f8ff;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-color: #fff0f5;
+            }
+        }
+
+        /* Activity 5 #2 - Adjust font sizes for different screen widths */
+        @media (max-width: 600px) {
+            #mainHeading {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #mainHeading {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
+
+        /* Activity 5 #4 - Hide sidebar on screens smaller than 600px */
+        @media (max-width: 600px) {
+            .blog-sidebar {
+                display: none;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Activity 5 #5 - Mobile-first: single column to multiple columns on larger screens */
+        /* Already implemented with existing media queries, but enhancing */
+
+        /* Small screens (mobile) - single column (default) */
+        @media (max-width: 599px) {
+            .card-container {
+                flex-direction: column;
+            }
+
+            .flex-nav {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .activity-nav {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery img {
+                width: 100%;
+                height: auto;
+            }
+
+            .calendar {
+                padding: 5px;
+                gap: 2px;
+            }
+
+            .day-name {
+                padding: 8px 2px;
+                font-size: 11px;
+            }
+
+            .day {
+                min-height: 50px;
+                padding: 5px;
+                font-size: 12px;
+            }
+
+            .span-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 80px);
+            }
+
+            .span-item {
+                grid-column: 1 / 3;
+                grid-row: 2 / 4;
+            }
+
+            /* Adjust form inputs for mobile */
+            input,
+            textarea,
+            select {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        /* Medium screens (tablet) - 2 columns */
+        @media (min-width: 600px) and (max-width: 899px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-container {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Large screens (desktop) - 3+ columns (already default) */
+        @media (min-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* ================================================ */
+        /* ACTIVITY 6: STYLED BLOG PAGE WITH FEEDBACK FORM */
+        /* ================================================ */
+
+        /* Activity 6 #1 - Style the blog content */
+        /* - Readable fonts and paragraph font size 18px (already set) */
+        /* - Spacing between sections (already using margins/padding) */
+        /* - Style headings with distinctive colors and font weights */
+        h1 {
+            color: #4206e9;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #f10b54;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #4206e9;
+            font-weight: 500;
+        }
+
+        /* Activity 6 #2 - Style the form */
+        /* - Consistent padding and border to all input fields (already set) */
+        /* - Different background colors for the form section (already set) */
+        /* - Style submit button with hover effects (already set with transition) */
+        #feedback {
+            background-color: #f5f0ff;
+            border: 2px solid #4206e9;
+        }
+
+        form {
+            background: linear-gradient(to bottom, #f53780, #ff8aae);
+            border: 2px solid #4206e9;
+        }
+
+        form label {
+            font-weight: bold;
+            color: white;
+        }
+
+        input[type="checkbox"]+label,
+        input[type="radio"]+label {
+            color: white;
+        }
+
+        /* Activity 6 #3 - Style the images */
+        /* - Borders or shadows to enhance visual appeal (already set) */
+        /* - max-width: 100% so they scale properly (already set) */
+
+        /* Activity 6 #4 - Box model for consistent spacing across all elements */
+        /* Already implemented with * { box-sizing: border-box; } */
+        /* Additional box model improvements */
+        section,
+        article,
+        div,
+        header,
+        footer,
+        nav {
+            box-sizing: border-box;
+        }
+
+        /* Additional form styling for Activity 6 */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Style the skill checkboxes and radio buttons container */
+        .form-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .form-group input[type="checkbox"],
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        /* Special styling for the file input */
+        input[type="file"] {
+            padding: 8px;
+            background-color: white;
+            border: 2px solid #4206e9;
+        }
+
+        /* Add focus styles for accessibility */
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: 2px solid #4206e9;
+            border-color: #f10b54;
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+    <p style="margin: 15px;">
+        <a href="#bottom">Back to Bottom</a>
+    </p>
+
+    <header>
+
+        <h1 id="mainHeading">
+            Welcome to My Website
+        </h1>
+
+        <p>
+            This is a simple welcome message.!!!!
+        </p>
+
+    </header>
+
+
+    <nav class="flex-nav">
+
+        <a href="#top">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#journey">Journey</a>
+
+        <a href="#hobbies">Hobbies</a>
+
+        <a href="#schedule">Schedule</a>
+
+        <a href="#layouts">CSS Layouts</a>
+
+        <a href="#feedback">Feedback</a>
+
+    </nav>
+
+    <article id="about">
+
+        <h2>About This Site</h2>
+
+        <p>
+            This site is a demonstration of a My College Website.
+        </p>
+
+    </article>
+
+    <p style="margin: 15px;">
+
+        <b>Author:</b>
+        CYRILL ANNE M. COMBATE!!!
+
+    </p>
+
+
+    <p style="margin: 15px;">
+
+        <b>Publication Date:</b>
+        August 3 2024
+
+    </p>
+
+    <section id="journey">
+
+        <h2>Starting My Journey</h2>
+
+        <p>
+            To start my day, I wake up at 6:30 AM if I have a 7:30 AM
+            class—that's my daily routine. I also get the child I look
+            after ready, since the little one stays with me every morning.
+            My mom irons my clothes the night before because she likes
+            them perfectly pressed. I skip breakfast at home and head
+            straight to school, where I eat instead; after that, I shower,
+            commute, and go to class.
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2>My College Experience</h2>
+
+        <p>
+            The course is tough, but I can handle it because I want to
+            graduate. I'm my mom's only child, and I want to give her
+            a good life. College life is actually enjoyable, provided
+            you find friends who will stick with you through the hard
+            times and the work; having that kind of support gives you
+            a better chance of graduating since you have someone with
+            you every step of the way.
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2>My Future Goals!</h2>
+
+        <p>
+            My goal is to graduate and provide a good life for my mom,
+            since she is the only one I have; I want to repay her for
+            all her hardships. Her only wish is for me to finish my
+            studies and have a small shop of her own, so I will make
+            that happen, no matter how difficult my studies may be.
+        </p>
+
+    </section>
+
+    <section id="hobbies">
+
+        <h2>My Favorite Hobbies Haha</h2>
+
+        <h3>Top 5 Hobbies</h3>
+
+        <ol>
+
+            <li>Cooking</li>
+
+            <li>Caring Baby</li>
+
+            <li>Watching Basketball</li>
+
+            <li>Playing Volleyball</li>
+
+            <li>Hiking</li>
+
+        </ol>
+
+
+        <h3>Other Activities</h3>
+
+        <ul>
+
+            <li>Listening to Music</li>
+
+            <li>Gardening</li>
+
+            <li>Traveling</li>
+
+            <li>Watching Movies</li>
+
+            <li>Playing Games</li>
+
+        </ul>
+
+    </section>
+
+    <section>
+
+        <h2>MY FAVORITE BINI</h2>
+
+        <figure>
+
+            <img
+                src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg"
+                alt="My Favorite BINI"
+                width="200"
+            >
+
+            <figcaption>
+                My BABY
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+    <section id="schedule">
+
+        <h2>Class Schedule</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Day</th>
+
+                <th>Time</th>
+
+                <th>Subject</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Monday</td>
+
+                <td>8:30 AM - 10:00 AM</td>
+                <td>Mathematics</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Tuesday</td>
+
+                <td>10:00 AM - 11:30 AM</td>
+
+                <td>AP</td>
+
+            </tr>
+<tr>
+
+                <td>Wednesday</td>
+
+                <td>1:00 PM - 2:30 PM</td>
+
+                <td>ARTS</td>
+
+            </tr>
+<tr>
+
+                <td>Thursday</td>
+
+                <td>3:00 PM - 4:30 PM</td>
+
+                <td>SCIENCE</td>
+
+            </tr>
+
+
+            <tr>
+<td>Friday</td>
+
+                <td>9:00 AM - 10:30 AM</td>
+
+                <td>Physical Education</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+<section id="layouts">
+
+        <h1>CSS Layout Techniques</h1>
+
+        <p>
+            This section demonstrates CSS Flexbox and CSS Grid
+            layout techniques.
+        </p>
+
+        <h2>Flexbox</h2>
+
+        <h3>
+            Horizontal Navigation Bar
+        </h3>
+<p>
+            Create a horizontal navigation bar with evenly spaced
+            menu items using Flexbox.
+        </p>
+
+        <nav class="activity-nav">
+
+            <a href="#top">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#hobbies">Hobbies</a>
+<a href="#schedule">Schedule</a>
+
+            <a href="#feedback">Feedback</a>
+
+        </nav>
+
+        <h2>Three Card Layout</h2>
+
+        <p>
+            Build a card layout where three cards are aligned
+            horizontally and centered vertically.
+        </p>
+<div class="card-container">
+
+            <div class="card">
+
+                <h3>Card 1</h3>
+
+                <p>
+                    This is my first card.
+                </p>
+
+            </div>
+<div class="card">
+
+                <h3>Card 2</h3>
+
+                <p>
+                    This is my second card.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Card 3</h3>
+
+                <p>
+This is my third card.
+                </p>
+
+            </div>
+
+        </div>
+
+        <h2>Responsive Image Gallery</h2>
+
+        <p>
+            Create a responsive image gallery that wraps images
+            into new rows when the screen width becomes smaller.
+        </p>
+<div class="image-gallery">
+
+            <img
+                src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg"
+                alt="BINI Image 1"
+            >
+
+            <img
+                src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg"
+                alt="BINI Image 2"
+            >
+<img
+                src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg"
+                alt="BINI Image 3"
+            >
+
+            <img
+                src="https://i.pinimg.com/736x/57/4f/bc/574fbcd53cacc80d6ee07af1ff343d81.jpg"
+                alt="BINI Image 4"
+            >
+
+        </div>
+</div>
+
+        <h2>Center Element</h2>
+
+        <p>
+            Align a single element both vertically and horizontally
+            in the center of the viewport using Flexbox.
+        </p>
+Align a single element both vertically and horizontally
+            in the center of the viewport using Flexbox.
+        </p>
+
+        <div class="center-container">
+
+            <div class="center-element">
+                Centered Element
+            </div>
+
+        </div>
+<h2>CSS Grid</h2>
+
+        <h3>
+            Two-Column Blog Layout
+        </h3>
+
+        <p>
+            Create a two-column blog layout with a main content
+            area and a sidebar.
+        </p>
+<div class="blog-grid">
+
+            <div class="blog-main">
+
+                <h3>My College Blog</h3>
+
+                <p>
+                    College life can be challenging, but it is also
+                    enjoyable. It gives students opportunities to
+                    learn new things, meet friends, and prepare for
+                    their future.
+                </p>
+           </div>
+
+
+            <div class="blog-sidebar">
+
+                <h3>Sidebar</h3>
+
+                <ul>
+
+                    <li>College Life</li>
+
+                    <li>My Goals</li>
+                
+                <li>My Hobbies</li>
+
+                    <li>My Schedule</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <h3>
+            Four-Column Product Grid
+        </h3>
+
+        <p>
+Build a four-column product grid that adjusts to
+            two columns on smaller screens.
+        </p>
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <h3>Product 1</h3>
+
+                <p>
+                    Notebook
+                </p>
+                <button>
+                    View
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <h3>Product 2</h3>
+
+                <p>
+                    School Bag
+                </p>
+
+                <button>
+                    View
+                </button>
+             </div>
+
+
+            <div class="product">
+
+                <h3>Product 3</h3>
+
+                <p>
+                    Water Bottle
+                </p>
+
+                <button>
+                    View
+                </button>
+
+            </div>
+         <div class="product">
+
+                <h3>Product 4</h3>
+
+                <p>
+                    School Shoes
+                </p>
+
+                <button>
+                    View
+                </button>
+
+            </div>
+
+        </div>
+
+        <h3>
+            Calendar Layout
+        </h3>
+<p>
+            Design a calendar layout using CSS Grid, with each
+            day in its own cell.
+        </p>
+
+        <div class="calendar">
+
+            <div class="day-name">Sunday</div>
+
+            <div class="day-name">Monday</div>
+
+            <div class="day-name">Tuesday</div>
+
+            <div class="day-name">Wednesday</div>
+
+            <div class="day-name">Thursday</div>
+
+            <div class="day-name">Friday</div>
+
+            <div class="day-name">Saturday</div>
+
+            <div class="day"></div>
+
+            <div class="day">1</div>
+
+            <div class="day">2</div>
+
+            <div class="day">3</div>
+
+            <div class="day">4</div>
+
+            <div class="day">5</div>
+
+            <div class="day">6</div>
+
+            <div class="day">7</div>
+
+            <div class="day">8</div>
+
+            <div class="day">9</div>
+
+            <div class="day">10</div>
+
+            <div class="day">11</div>
+
+            <div class="day">12</div>
+
+            <div class="day">13</div>
+
+            <div class="day">14</div>
+
+            <div class="day">15</div>
+
+            <div class="day">16</div>
+
+            <div class="day">17</div>
+
+            <div class="day">18</div>
+
+            <div class="day">19</div>
+
+            <div class="day">20</div>
+
+            <div class="day">21</div>
+
+            <div class="day">22</div>
+
+            <div class="day">23</div>
+ 
+            <div class="day">24</div>
+
+            <div class="day">25</div>
+            
+            <div class="day">26</div>
+
+            <div class="day">27</div>
+
+            <div class="day">28</div>
+
+            <div class="day">29</div>
+
+            <div class="day">30</div>
+
+            <div class="day">31</div>
+
+        </div>
+
+        <h3>
+            Spanning Multiple Rows and Columns
+        </h3>
+<p>
+            Place an element so it spans multiple rows or columns
+            within the grid.
+        </p>
+
+        <div class="span-grid">
+
+            <div class="small-item">
+                A
+            </div>
+
+            <div class="span-item">
+                Spans Multiple Rows and Columns
+            </div>
+<div class="small-item">
+                B
+            </div>
+
+            <div class="small-item">
+                C
+            </div>
+
+            <div class="small-item">
+                D
+            </div>
+
+            <div class="small-item">
+                E
+            </div>
+
+        </div>
+</section>
+
+    <section id="feedback">
+
+        <h1>Feed Back</h1>
+
+        <form
+            action="submit_feedback.php"
+            method="post"
+            enctype="multipart/form-data"
+        >
+<div class="form-group">
+                <label for="name">
+                    Name:
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    Email:
+                </label>
+<input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="feedback-text">
+                    Feedback:
+                </label>
+
+                <br>
+<textarea
+                    id="feedback-text"
+                    name="feedback"
+                    rows="4"
+                    cols="50"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <p>
+                    <b>Select Your Skill:</b>
+                </p>
+<input
+                    type="checkbox"
+                    id="html"
+                    name="skill"
+                    value="html"
+                >
+
+                <label for="html">
+                    HTML
+                </label>
+
+                <br>
+<input
+                    type="checkbox"
+                    id="css"
+                    name="skill"
+                    value="css"
+                >
+
+                <label for="css">
+                    CSS
+                </label>
+
+                <br>
+<input
+                    type="checkbox"
+                    id="javascript"
+                    name="skill"
+                    value="javascript"
+                >
+
+                <label for="javascript">
+                    JavaScript
+                </label>
+            </div>
+</label>
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="javascript"
+                    name="skill"
+                    value="javascript"
+                >
+<label for="javascript">
+                    JavaScript
+                </label>
+            </div>
+
+            <div class="form-group">
+                <p>
+                    <b>Preferred Contact Method:</b>
+                </p>
+<input
+                    type="radio"
+                    id="email_option"
+                    name="contact"
+                    value="email"
+                >
+
+                <label for="email_option">
+                    Email
+                </label>
+
+                <br>
+                <input
+            type="radio"
+                    id="phone_option"
+                    name="contact"
+                    value="phone"
+                >
+
+                <label for="phone_option">
+                    Phone
+                </label>
+            </div>
+           <div class="form-group">
+                <label for="country">
+                    Country:
+                </label>
+
+                <select
+                    id="country"
+                    name="country"
+                >
+
+                    <option value="philippines">
+                 Philippines
+                    </option>
+
+                    <option value="usa">
+                        USA
+                    </option>
+
+                    <option value="canada">
+                        Canada
+                    </option>
+
+                    <option value="uk">
+                        UK
+                </option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="profile">
+                    Upload Profile Picture:
+                </label>
+
+                <input
+                    type="file"
+                    id="profile"
+                    name="profile"
+                >
+            </div>
+            <div class="form-group">
+                <input
+                    type="submit"
+                    value="Submit"
+                >
+            </div>
+
+        </form>
+
+    </section>
+
+    <footer
+        id="bottom"
+style="
+            background-color: #4206e9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        "
+    >
+        <p style="text-align: center;">
+            &copy; 2025 My College Website.
+            All rights reserved.
+        </p>
+<p style="text-align: center;">
+
+            <a
+                href="#top"
+                style="color: white;"
+            >
+                Back to Top
+            </a>
+        </p>
+    </footer>
+</body>
+</html>
