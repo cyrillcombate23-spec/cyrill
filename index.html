@@ -1,118 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lakbay Camping Kiosk</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="kiosk-container">
-    <h1>🇵🇭 Lakbay Camping Site</h1>
+    <div class="container">
+        <h2>User Greeting Generator</h2>
+        
+        <!-- Inputs for user name and age -->
+        <label for="nameInput">Enter your Name:</label>
+        <input type="text" id="nameInput" placeholder="e.g., Juan">
 
+        <label for="ageInput">Enter your Age:</label>
+        <input type="number" id="ageInput" placeholder="e.g., 20">
 
-    <div class="card-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=600&q=80" alt="Beachfront Tent">
-        <div class="card-content">
-          <h3>Beachfront Tent</h3>
-          <p>Pitch your tent on the white sand. Perfect for island hopping.</p>
-          <span class="price">₱1,500 / night</span>
-        </div>
-      </div>
+        <!-- Button to trigger the function -->
+        <button onclick="generateUserGreeting()">Submit</button>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80" alt="Campfire">
-        <div class="card-content">
-          <h3>Bonfire & Boodle Fight</h3>
-          <p>Includes firewood and a traditional Filipino feast on banana leaves.</p>
-          <span class="price">₱1,200 / group</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=600&q=80" alt="Hiking">
-        <div class="card-content">
-          <h3>Mt. Pulag Trek</h3>
-          <p>Guided hike to the summit. Witness the sea of clouds!</p>
-          <span class="price">₱2,500 / person</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=600&q=80" alt="Cabin">
-        <div class="card-content">
-          <h3>Native Hut</h3>
-          <p>Experience traditional Filipino living in a cozy bamboo hut.</p>
-          <span class="price">₱2,000 / night</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" alt="Coffee">
-        <div class="card-content">
-          <h3>Local Coffee</h3>
-          <p>Freshly brewed local Batangas coffee to start your morning.</p>
-          <span class="price">₱150</span>
-        </div>
-      </div>
+        <!-- Area to display the result -->
+        <p id="output"></p>
     </div>
 
-    
-    <div class="feedback-section">
-      <h2>How Was Your Stay?</h2>
-      <form id="feedbackForm" action="#" method="POST">
+    <script>
+        // Requirement: Uses a function to generate the greeting message.
+        function createGreeting(name, age) {
+            let greetingMessage = "";
+            let userType = "";
 
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-        </div>
+            // Requirement: Determines whether the user is a minor or an adult using an if-else statement.
+            if (age >= 18) {
+                userType = "an adult";
+            } else {
+                userType = "a minor";
+            }
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
+            // Requirement: Personalized greeting including the minor/adult status.
+            greetingMessage = `Hello, ${name}! You are ${age} years old, which means you are ${userType}.`;
+            
+            return greetingMessage;
+        }
 
-        <div class="form-group">
-          <label for="rating">Overall Rating</label>
-          <select id="rating" name="rating" required>
-            <option value="">Select a rating...</option>
-            <option value="5">5 - Amazing</option>
-            <option value="4">4 - Very Good</option>
-            <option value="3">3 - Average</option>
-            <option value="2">2 - Needs Improvement</option>
-            <option value="1">1 - Poor</option>
-          </select>
-        </div>
+        // Main function triggered by the button click
+        function generateUserGreeting() {
+            // 1. Accepts a user's name and age
+            let userName = document.getElementById("nameInput").value;
+            let userAge = parseInt(document.getElementById("ageInput").value);
 
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="What is your feedback about?" required>
-        </div>
+            // Basic validation to ensure fields aren't empty
+            if (userName === "" || isNaN(userAge)) {
+                document.getElementById("output").textContent = "Please enter both a valid name and age.";
+                document.getElementById("output").style.color = "red";
+                return;
+            }
 
-        <div class="form-group">
-          <label for="comments">Comments</label>
-          <textarea id="comments" name="comments" placeholder="Tell us about your camping experience..." required></textarea>
-        </div>
+            // 2. Call the function to get the greeting message
+            let finalMessage = createGreeting(userName, userAge);
 
-        <button type="submit" class="submit-btn">Submit Review</button>
-      </form>
+            // 3. Displays the personalized greeting on the webpage
+            document.getElementById("output").textContent = finalMessage;
+            document.getElementById("output").style.color = "#333";
+        }
+    </script>
 
-      
-      <div id="outputContainer" class="hidden">
-        <h3>Submission Summary</h3>
-        <p><strong>Output 1 (Name):</strong> <span id="outName"></span></p>
-        <p><strong>Output 2 (Email):</strong> <span id="outEmail"></span></p>
-        <p><strong>Output 3 (Subject):</strong> <span id="outSubject"></span></p>
-        <p><strong>Output 4 (Rating):</strong> <span id="outRating"></span></p>
-        <p><strong>Output 5 (Message):</strong> <span id="outMessage"></span></p>
-      </div>
-
-      <div id="errormsg"></div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+</body>it
 </html>
